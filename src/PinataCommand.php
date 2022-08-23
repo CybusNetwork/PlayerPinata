@@ -20,7 +20,6 @@ class PinataCommand extends Command implements PluginOwned {
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args) {
-        // TODO: Set players with perm to immobile and set event status to true so no damage is actually taken.
 
         if($this->owningPlugin->getEventRunning()) {
             $this->owningPlugin->setEventRunning(false);
