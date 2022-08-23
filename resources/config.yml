@@ -1,0 +1,15 @@
+---
+rewards:
+  common:
+    chance: 10
+    # List of item names
+    drops: [dirt, coal]
+  rare:
+    chance: 5
+    # List of item IDs
+    drops: [iron_ingot, gold_ingot]
+  legendary:
+    chance: 1
+    # List of item IDs
+    drops: [diamond, emerald]
+...

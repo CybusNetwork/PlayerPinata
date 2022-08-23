@@ -1,0 +1,15 @@
+---
+name: PlayerPinata
+version: 1.0.0
+main: Duo\pinata\Main
+api: 4.0.0
+author: Duo
+src-namespace-prefix: Duo\pinata
+permissions:
+  pinata.command:
+    default: op
+    description: Start the pinata event!
+  player.pinata:
+    default: op
+    description: Make players become pinatas!
+...
