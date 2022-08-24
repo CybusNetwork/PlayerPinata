@@ -7,6 +7,7 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityItemPickupEvent;
 use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerDropItemEvent;
 use pocketmine\item\StringToItemParser;
 use pocketmine\player\Player;
 use function array_rand;
@@ -61,6 +62,16 @@ class EventListener implements Listener{
         $entity = $event->getEntity();
         if($entity instanceof Player){
             if($this->plugin->getEventRunning() && $entity->hasPermission("player.pinata")){
+                $event->cancel();
+            }
+        }
+    }
+
+    public function onDrop(PlayerDropItemEvent $event){
+        $player = $event->getPlayer();
+        $item = $event->getItem();
+        if($this->plugin->getEventRunning()){
+            if($player->hasPermission("player.pinata") || $item->getNamedTag()->getTag(Main::PINATA_BAT) !== null){
                 $event->cancel();
             }
         }
